@@ -11,3 +11,6 @@ Para usar este chat, copie o conteudo de cada arquivo dentro do editor do Stream
 - Nessa parte tem as seções onde serão colados o conteúdpo de cada arquivo.
 
 Na aba `Fields` adicione o conteudo do arquivo chat.json.
+Na aba `DATA` só deixar as chaves vazias `{}`.
+
+Esse chat foi feito baseado no que ja existe pro StreamLabs feito pelo **Jogacopai** e com base no modelo da própria StreamElements.
