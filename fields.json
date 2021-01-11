@@ -1,0 +1,258 @@
+{
+  "testMessage": {
+    "type": "button",
+    "label": "Mensagem de Teste",
+    "value": "Mensagem de Teste",
+    "group": "Testar"
+  },
+  "showTopDegrade": {
+    "label": "Mostrar Degradê Superior:",
+    "type": "dropdown",
+    "value": "inline-block",
+    "options": {
+      "none": "Não",
+      "inline-block": "Sim"
+    },
+    "group": "Customização"
+  },
+  "showBottonDegrade": {
+    "label": "Mostrar Degradê Inferior:",
+    "type": "dropdown",
+    "value": "inline-block",
+    "options": {
+      "none": "Não",
+      "inline-block": "Sim"
+    },
+    "group": "Customização"
+  },
+  "msgBorderColor": {
+    "type": "colorpicker",
+    "label": "Cor da Borda da Mensagem:",
+    "value": "#ffd539",    
+    "group": "Customização"
+  },  
+  "msgBackgroundColor": {
+    "type": "colorpicker",
+    "label": "Cor do Fundo da Mensagem:",
+    "value": "rgba(0,0,0,0)",    
+    "group": "Customização"
+  }, 
+  "backgroundColor": {
+    "type": "colorpicker",
+    "label": "Cor de Fundo do Chat:",
+    "value": "rgba(17,11,44,1)",
+    "group": "Customização"
+  }, 
+  "font": {
+    "type": "googleFont",
+    "label": "Fonte:",
+    "value": "Roboto",
+    "group": "Fonte"
+  }, 
+  "messageColor": {
+    "type": "colorpicker",
+    "label": "Cor das Mensagens:",
+    "value": "#fff",
+    "group": "Fonte"
+  },  
+  "userColor": {
+    "type": "colorpicker",
+    "label": "Cor dos Usuários:",
+    "value": "#fff",
+    "group": "Fonte"
+  },
+  "fontSize": {
+    "label": "Tamanho da Fonte:",
+    "type": "dropdown",
+    "value": "700",
+    "options": {
+      "100": "Fino (100)",
+      "300": "Suave (300)",
+      "400": "Regular (400)",
+      "500": "Médio (500)",
+      "700": "Negrito (700)",
+      "900": "Negrito Black (900)"
+    },
+    "group": "Fonte"
+  },
+  "textShadow": {
+    "type": "text",
+    "label": "Sombra do Texto:",
+    "value": "rgb(0, 0, 0) 0px 0px 0px",
+    "group": "Fonte"
+  },
+  "badgeSize": {
+    "type": "slider",
+    "label": "Tam. das Insígnias:",
+    "value": 24,
+    "min": 16,
+    "max": 30,
+    "step": 1,
+    "group": "Fonte"
+  },   
+  "usernameSize": {
+    "type": "slider",
+    "label": "Tam. do Nome do Usuário:",
+    "value": 24,
+    "min": 16,
+    "max": 30,
+    "step": 1,
+    "group": "Fonte"
+  }, 
+  "messageSize": {
+    "type": "slider",
+    "label": "Tam. da Mensagem:",
+    "value": 24,
+    "min": 16,
+    "max": 30,
+    "step": 1,
+    "group": "Fonte"
+  },
+  "emoteSize": {
+    "type": "slider",
+    "label": "Tam. dos Emotes:",
+    "value": 24,
+    "min": 16,
+    "max": 60,
+    "step": 1,
+    "group": "Fonte"
+  },
+  "alignMessages": {
+    "label": "Direção das Mensagens:",
+    "type": "dropdown",
+    "value": "position: absolute",
+    "options": {
+      "display: block": "Cima pra Baixo",
+      "position: absolute": "Baixo pra Cima"
+    },
+    "group": "Configurações"
+  },
+  "hideCommands": {
+    "label": "Ignorar Comandos:",
+    "type": "dropdown",
+    "group": "Configurações",
+    "value": "true",
+    "options": {
+      "true": "Sim",
+      "false": "Não"
+    },
+    "group": "Configurações"
+  },
+  "messagesLimit":{
+    "type": "slider",
+    "label": "Limite de Mensagens:",    
+    "value": 0,
+    "min": 0,
+    "max": 50,
+    "step": 1,
+    "group": "Configurações"
+  },
+  "hideAfter": {
+    "type": "slider",
+    "label": "Remover msg (0 p/ desativar):",    
+    "value": 0,
+    "min": 0,
+    "max": 60,
+    "step": 1,
+    "group": "Configurações"
+  },
+  "ignoredUsers": {
+    "label": "Usuários ignorados (por virgula):",
+    "type": "text",
+    "value": "StreamElements,StreamLabs,NightBot",
+    "group": "Configurações"
+  },
+  "animationIn": {
+    "type": "dropdown",
+    "label": "Animação de Entrada:",
+    "value": "bounceInUp",
+    "options": {
+      "none": "None",
+      "bounceIn": "bounceIn",
+      "bounceInDown": "bounceInDown",
+      "bounceInLeft": "bounceInLeft",
+      "bounceInRight": "bounceInRight",
+      "bounceInUp": "bounceInUp",
+      "fadeIn": "fadeIn",
+      "fadeInDown": "fadeInDown",
+      "fadeInDownBig": "fadeInDownBig",
+      "fadeInLeft": "fadeInLeft",
+      "fadeInLeftBig": "fadeInLeftBig",
+      "fadeInRight": "fadeInRight",
+      "fadeInRightBig": "fadeInRightBig",
+      "fadeInUp": "fadeInUp",
+      "fadeInUpBig": "fadeInUpBig",
+      "flipInX": "flipInX",
+      "flipInY": "flipInY",
+      "lightSpeedIn": "lightSpeedIn",
+      "rotateIn": "rotateIn",
+      "rotateInDownLeft": "rotateInDownLeft",
+      "rotateInDownRight": "rotateInDownRight",
+      "rotateInUpLeft": "rotateInUpLeft",
+      "rotateInUpRight": "rotateInUpRight",
+      "slideInUp": "slideInUp",
+      "slideInDown": "slideInDown",
+      "slideInLeft": "slideInLeft",
+      "slideInRight": "slideInRight",
+      "zoomIn": "zoomIn",
+      "zoomInDown": "zoomInDown",
+      "zoomInLeft": "zoomInLeft",
+      "zoomInRight": "zoomInRight",
+      "zoomInUp": "zoomInUp",
+      "jackInTheBox": "jackInTheBox",
+      "rollIn": "rollIn"
+    },
+    "group": "Configurações"
+  },
+  "animationOut": {
+    "type": "dropdown",
+    "label": "Animação de Saída:",
+    "value": "none",
+    "options": {
+      "none": "None",
+      "bounceOut": "bounceOut",
+      "bounceOutDown": "bounceOutDown",
+      "bounceOutLeft": "bounceOutLeft",
+      "bounceOutRight": "bounceOutRight",
+      "bounceOutUp": "bounceOutUp",
+      "fadeOut": "fadeOut",
+      "fadeOutDown": "fadeOutDown",
+      "fadeOutDownBig": "fadeOutDownBig",
+      "fadeOutLeft": "fadeOutLeft",
+      "fadeOutLeftBig": "fadeOutLeftBig",
+      "fadeOutRight": "fadeOutRight",
+      "fadeOutRightBig": "fadeOutRightBig",
+      "fadeOutUp": "fadeOutUp",
+      "fadeOutUpBig": "fadeOutUpBig",
+      "flipOutX": "flipOutX",
+      "flipOutY": "flipOutY",
+      "lightSpeedOut": "lightSpeedOut",
+      "rotateOut": "rotateOut",
+      "rotateOutDownLeft": "rotateOutDownLeft",
+      "rotateOutDownRight": "rotateOutDownRight",
+      "rotateOutUpLeft": "rotateOutUpLeft",
+      "rotateOutUpRight": "rotateOutUpRight",
+      "slideOutUp": "slideOutUp",
+      "slideOutDown": "slideOutDown",
+      "slideOutLeft": "slideOutLeft",
+      "slideOutRight": "slideOutRight",
+      "zoomOut": "zoomOut",
+      "zoomOutDown": "zoomOutDown",
+      "zoomOutLeft": "zoomOutLeft",
+      "zoomOutRight": "zoomOutRight",
+      "zoomOutUp": "zoomOutUp",
+      "rollOut": "rollOut"
+    },
+    "group": "Configurações"
+  },  
+  "widgetName": {
+    "type": "hidden",
+    "value": "Chat Customizado",
+    "group": "Configurações"
+  },
+  "widgetAuthor": {
+    "type": "hidden",
+    "value": "FabioZumbi12",
+    "group": "Configurações"
+  }
+}
