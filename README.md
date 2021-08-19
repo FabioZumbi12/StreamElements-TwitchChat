@@ -1,5 +1,7 @@
 # StreamElements TwitchChat
 
+![image](https://user-images.githubusercontent.com/5833818/130097052-c4a365c8-3601-4fdb-bc2f-73f7069df461.png)
+
 Código para utilizar um chat totalmente customizável e inicialmente baseado no estilo do chat do Alanzoka.
 
 Para usar este chat, copie o conteudo de cada arquivo dentro do editor do StreamElements:
