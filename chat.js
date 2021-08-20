@@ -146,9 +146,6 @@ window.addEventListener("onWidgetLoad", function (obj) {
         provider = profile.provider;
   });
   
-  
-  console.log(fieldData);
-  
   if (fieldData.alignMessages === "display: block") {
       addition = "prepend";
       removeSelector = ".message-row:nth-child(n+" + (messagesLimit + 1) + ")"
@@ -168,8 +165,6 @@ function addMessage(username, message, badges, userId, msgId, color, isAction) {
   if (borderColorUser === "sim") {
     borderMessage = color;
   }
-  
-  console.log(borderMessage);
   
   const element = $.parseHTML(`
   <div data-from="${userId}" data-id="${msgId}" class="message-row {animationIn} animated" id="msg-${totalMessages}">
