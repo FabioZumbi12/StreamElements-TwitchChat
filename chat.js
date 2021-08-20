@@ -5,8 +5,9 @@ let hideAfter = 60;
 let ignoredUsers = [];
 let animationIn = 'bounceIn';
 let animationOut = 'bounceOut';
+let borderMessage = '#000000';
 
-window.addEventListener("onEventReceived", function (obj) {
+window.addEventListener("onEventReceived", function (obj) {  
   // Deletar mensagens
   if (obj.detail.listener === "delete-message") {
     const msgId = obj.detail.event.msgId;
@@ -133,8 +134,10 @@ window.addEventListener("onWidgetLoad", function (obj) {
   hideAfter = fieldData.hideAfter;
   animationIn = fieldData.animationIn;
   animationOut = fieldData.animationOut;
+  borderMessage = fieldData.msgBorderColor;
   channelName = obj.detail.channel.username;
   messageSize = fieldData.messageSize;
+  borderColorUser = fieldData.msgBorderColorUser;
   ignoredUsers = fieldData.ignoredUsers
     .toLowerCase()
     .replace(" ", "")
@@ -142,6 +145,9 @@ window.addEventListener("onWidgetLoad", function (obj) {
   fetch('https://api.streamelements.com/kappa/v2/channels/' + obj.detail.channel.id + '/').then(response => response.json()).then((profile) => {
         provider = profile.provider;
   });
+  
+  
+  console.log(fieldData);
   
   if (fieldData.alignMessages === "display: block") {
       addition = "prepend";
@@ -159,6 +165,12 @@ function addMessage(username, message, badges, userId, msgId, color, isAction) {
       actionClass = "action";
   }
   
+  if (borderColorUser === "sim") {
+    borderMessage = color;
+  }
+  
+  console.log(borderMessage);
+  
   const element = $.parseHTML(`
   <div data-from="${userId}" data-id="${msgId}" class="message-row {animationIn} animated" id="msg-${totalMessages}">
     <div class="meta" style="background-color: ${color};">
@@ -167,7 +179,7 @@ function addMessage(username, message, badges, userId, msgId, color, isAction) {
     </div>
 
     <div class="message">
-      <div class="container-message ${actionClass}">
+      <div class="container-message ${actionClass}" style="border: 2px solid ${borderMessage};">
         ${message}
       </div>
     </div>
