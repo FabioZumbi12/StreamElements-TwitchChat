@@ -16,10 +16,11 @@ Na aba `Fields` adicione o conteudo do arquivo chat.json.
 Na aba `DATA` só deixar as chaves vazias `{}`.
 
 ## Caracteristicas:
-- as mensagens serão apagas se um mod ou o Automod apagar ou banir o user;
-- É possivel ter a cor do contorno na mesma cor do viewer;
-- Personalizar o sentido que que o chat corre: CIma pra Baixo ou Baixo pra Cima;
-- Personalizar o efeito que o chat some e desaparece;
+- As mensagens serão apagadas se um mod ou o Automod apagar ou banir o user;
+- É possível ter a cor do contorno na mesma cor do viewer;
+- Personalizar a cor do texto e fundo da mensagem;
+- Personalizar o sentido que que o chat corre: Cima pra Baixo ou Baixo pra Cima;
+- Personalizar o efeito que o chat aparece e desaparece;
 - Tamanho do texto e dos emotes da mensagem;
 - Adicionar carimbo de hora pra cada mensagem;
 - Definir cor, sombra e tamanho do nome dos viewers e das insignias;
