@@ -25,6 +25,16 @@
     },
     "group": "Customização"
   },
+  "msgBorderColorUser": {
+    "label": "Cor da Borda Baseada no User:",
+    "type": "dropdown",
+    "value": "nao",
+    "options": {
+      "nao": "Não",
+      "sim": "Sim"
+    },
+    "group": "Customização"
+  },
   "msgBorderColor": {
     "type": "colorpicker",
     "label": "Cor da Borda da Mensagem:",
@@ -42,7 +52,17 @@
     "label": "Cor de Fundo do Chat:",
     "value": "rgba(17,11,44,1)",
     "group": "Customização"
-  }, 
+  },
+  "carimboHora": {
+    "label": "Mostrar Carimbo de Hora:",
+    "type": "dropdown",
+    "value": "nao",
+    "options": {
+      "nao": "Não",
+      "sim": "Sim"
+    },
+    "group": "Customização"
+  },
   "font": {
     "type": "googleFont",
     "label": "Fonte:",
