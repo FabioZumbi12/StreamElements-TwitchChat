@@ -35,7 +35,7 @@ body { background: {{backgroundColor}} !important; line-height: 1.5em; }
 /* ===== USERMESSAGE ===== */
 #log .message {position: relative; min-height: 20px;}
 #log .message .container-message {color: {{messageColor}}; background: {{msgBackgroundColor}}; 
-    text-shadow:{{textShadow}}; padding: 20px 18px 15px 18px; border: 2px solid {{msgBorderColor}}; 
+    text-shadow:{{textShadow}}; padding: 20px 18px 15px 18px; 
     border-radius: 0 10px 10px 10px; display: inline-block;
     font-family: {{font}}; font-size: {{messageSize}}px; word-break: break-word;}
 #log .message .container-message .emote { width: {{emoteSize}}px; vertical-align: middle; }
