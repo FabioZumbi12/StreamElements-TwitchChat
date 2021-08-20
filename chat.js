@@ -6,6 +6,7 @@ let ignoredUsers = [];
 let animationIn = 'bounceIn';
 let animationOut = 'bounceOut';
 let borderMessage = '#000000';
+let carimboHora = "nao";
 
 window.addEventListener("onEventReceived", function (obj) {  
   // Deletar mensagens
@@ -135,6 +136,7 @@ window.addEventListener("onWidgetLoad", function (obj) {
   animationIn = fieldData.animationIn;
   animationOut = fieldData.animationOut;
   borderMessage = fieldData.msgBorderColor;
+  carimboHora = fieldData.carimboHora;
   channelName = obj.detail.channel.username;
   messageSize = fieldData.messageSize;
   borderColorUser = fieldData.msgBorderColorUser;
@@ -166,6 +168,18 @@ function addMessage(username, message, badges, userId, msgId, color, isAction) {
     borderMessage = color;
   }
   
+  let hora = "";
+  if (carimboHora === "sim") {
+    let d = new Date();
+    let messageSizeTime = messageSize-(messageSize/4);
+    hora = `
+        <br>
+        <div class="time" style="font-size: ${messageSizeTime}px;">
+        ${('0' + d.getHours()).slice(-2)}:${('0' + d.getMinutes()).slice(-2)}:${('0' + d.getSeconds()).slice(-2)}
+        </div>
+  `
+  }
+  
   const element = $.parseHTML(`
   <div data-from="${userId}" data-id="${msgId}" class="message-row {animationIn} animated" id="msg-${totalMessages}">
     <div class="meta" style="background-color: ${color};">
@@ -176,6 +190,7 @@ function addMessage(username, message, badges, userId, msgId, color, isAction) {
     <div class="message">
       <div class="container-message ${actionClass}" style="border: 2px solid ${borderMessage};">
         ${message}
+        ${hora}
       </div>
     </div>
   </div>`);
