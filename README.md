@@ -15,4 +15,15 @@ Para usar este chat, copie o conteudo de cada arquivo dentro do editor do Stream
 Na aba `Fields` adicione o conteudo do arquivo chat.json.
 Na aba `DATA` só deixar as chaves vazias `{}`.
 
+## Caracteristicas:
+- as mensagens serão apagas se um mod ou o Automod apagar ou banir o user;
+- É possivel ter a cor do contorno na mesma cor do viewer;
+- Personalizar o sentido que que o chat corre: CIma pra Baixo ou Baixo pra Cima;
+- Personalizar o efeito que o chat some e desaparece;
+- Tamanho do texto e dos emotes da mensagem;
+- Adicionar carimbo de hora pra cada mensagem;
+- Definir cor, sombra e tamanho do nome dos viewers e das insignias;
+- Limitar a quantidade de mensagens na tela;
+- Blacklist para ignorar mensagens de Bots;
+
 Esse chat foi feito baseado no que ja existe pro StreamLabs feito pelo **Jogacopai** e com base no modelo da própria StreamElements.
