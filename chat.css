@@ -39,3 +39,4 @@ body { background: {{backgroundColor}} !important; line-height: 1.5em; }
     border-radius: 0 10px 10px 10px; display: inline-block;
     font-family: {{font}}; font-size: {{messageSize}}px; word-break: break-word;}
 #log .message .container-message .emote { width: {{emoteSize}}px; vertical-align: middle; }
+#log .message .container-message .time { float: right; padding: 10px 0px 0px 0px; }
