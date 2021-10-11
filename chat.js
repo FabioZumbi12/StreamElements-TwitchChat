@@ -67,7 +67,7 @@ window.addEventListener("onEventReceived", function (obj) {
                 },
               ],
               channel: channelName,
-              text: "Olá! Isso é uma mensagem de teste. Parabéns, está tudo funcionando Kappa",
+              text: "Hello! This is a test message. Congratulations, everything is working fine Kappa",
               isAction: !1,
               emotes: [
                 {
@@ -87,7 +87,7 @@ window.addEventListener("onEventReceived", function (obj) {
               msgId: "43285909-412c-4eee-b80d-89f72ba53142",
             },
             renderedText:
-              'Olá! Isso é uma mensagem de teste. Parabéns, está tudo funcionando <img src="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0" srcset="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0 1x, https://static-cdn.jtvnw.net/emoticons/v1/25/1.0 2x, https://static-cdn.jtvnw.net/emoticons/v1/25/3.0 4x" title="Kappa" class="emote">',
+              'Hello! This is a test message. Congratulations, everything is working fine <img src="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0" srcset="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0 1x, https://static-cdn.jtvnw.net/emoticons/v1/25/1.0 2x, https://static-cdn.jtvnw.net/emoticons/v1/25/3.0 4x" title="Kappa" class="emote">',
           },
         },
       });
