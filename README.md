@@ -7,6 +7,8 @@ Código para utilizar um chat totalmente customizável e inicialmente baseado no
 Para usar este chat, copie o conteudo de cada arquivo dentro do editor do StreamElements:
 
 ## Instalação:
+Clique aqui importar o widget direto nos seus overlays: https://strms.net/chat_widget_by_fabiozumbi12  
+Ou siga os passos abaixo:  
 - Va para o editor de overlay do StreamElements e adicione um Overlay novo ou edite um existente;
 - Adicione um widget customizado em `+ > Static Custom > Custom Widget`;
 - Em seguida clique em `Open Editor`;
