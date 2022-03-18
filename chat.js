@@ -115,7 +115,7 @@ window.addEventListener("onEventReceived", function (obj) {
   let color = data.tags.color;
   if (color === "") {
     const username = data.displayName;
-    color = data.displayColor !== "" ? data.displayColor : "#" + (md5(username).substr(26));
+    color = data.displayColor !== "" ? data.displayColor : "#" + (md5(username).slice(26));
   }
   
   addMessage(obj.detail.event.data.displayName, 
