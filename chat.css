@@ -30,7 +30,7 @@ body { background: {{backgroundColor}} !important; line-height: 1.5em; }
   #log .meta .badges {float: left; margin-right: 10px;}
 #log .meta .badges > img { width: {{badgeSize}}px; height: {{badgeSize}}px; margin-right: 5px;}
       #log .meta .badges > img:last-child {margin-right: 0;}
-  #log .meta .name {float: left; line-height: 21px; color: {{userColor}};}
+  #log .meta .name {float: left; line-height: 21px;}
 
 /* ===== USERMESSAGE ===== */
 #log .message {position: relative; min-height: 20px;}
