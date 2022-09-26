@@ -86,7 +86,7 @@
         "options": {
             "left": "Left",
             "center": "Center",
-            "right": "Roght",
+            "right": "Right",
           "justify": "Justify"
         },
         "group": "Customization"
