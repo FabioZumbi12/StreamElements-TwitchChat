@@ -1,14 +1,22 @@
-let totalMessages = 0, messagesLimit = 0, channelName, provider, addition, removeSelector;
-let hideCommands = "true";
-let messageSize = 24;
-let hideAfter = 60;
-let ignoredUsers = [];
-let animationIn = 'bounceIn';
-let animationOut = 'bounceOut';
-let borderMessage = '#000000';
-let carimboHora = "nao";
+var totalMessages = 0,
+  messagesLimit = 0,
+  channelName,
+  provider,
+  addition,
+  removeSelector,
+  localCarimboHora,
+  autoUserColor,
+  userColor,
+    carimboHora,
+    borderMessage,
+    animationIn,
+    animationOut;
+var hideCommands = "true";
+var messageSize = 24;
+var hideAfter = 60;
+var ignoredUsers = [];
 
-window.addEventListener("onEventReceived", function (obj) {  
+window.addEventListener("onEventReceived", function (obj) {
   // Deletar mensagens
   if (obj.detail.listener === "delete-message") {
     const msgId = obj.detail.event.msgId;
@@ -19,7 +27,7 @@ window.addEventListener("onEventReceived", function (obj) {
     $(`.message-row[data-from=${userId}]`).remove();
     return;
   }
-  
+
   // Testar chat
   if (obj.detail.event.listener === "widget-button") {
     if (obj.detail.event.field === "testMessage") {
@@ -54,20 +62,18 @@ window.addEventListener("onEventReceived", function (obj) {
                 {
                   type: "moderator",
                   version: "1",
-                  url:
-                    "https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/3",
+                  url: "https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/3",
                   description: "Moderator",
                 },
                 {
                   type: "partner",
                   version: "1",
-                  url:
-                    "https://static-cdn.jtvnw.net/badges/v1/d12a2e27-16f6-41d0-ab77-b780518f00a3/3",
+                  url: "https://static-cdn.jtvnw.net/badges/v1/d12a2e27-16f6-41d0-ab77-b780518f00a3/3",
                   description: "Verified",
                 },
               ],
               channel: channelName,
-              text: "Hello! This is a test message. Congratulations, everything is working fine Kappa",
+              text: "Olá! Isso é uma mensagem de teste. Parabéns, está tudo funcionando Kappa",
               isAction: !1,
               emotes: [
                 {
@@ -87,7 +93,7 @@ window.addEventListener("onEventReceived", function (obj) {
               msgId: "43285909-412c-4eee-b80d-89f72ba53142",
             },
             renderedText:
-              'Hello! This is a test message. Congratulations, everything is working fine <img src="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0" srcset="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0 1x, https://static-cdn.jtvnw.net/emoticons/v1/25/1.0 2x, https://static-cdn.jtvnw.net/emoticons/v1/25/3.0 4x" title="Kappa" class="emote">',
+              'Hello! This is a test message. Congratulations, everything is working fine Kappa',
           },
         },
       });
@@ -99,11 +105,11 @@ window.addEventListener("onEventReceived", function (obj) {
   // Tratar mensagem
   if (obj.detail.listener !== "message") return;
   let data = obj.detail.event.data;
-  
+
   if (data.text.startsWith("!") && hideCommands === "true") return;
-  
+
   if (ignoredUsers.indexOf(data.nick) !== -1) return;
-  
+
   let message = attachEmotes(data);
   let badges = "",
     badge;
@@ -111,20 +117,25 @@ window.addEventListener("onEventReceived", function (obj) {
     badge = data.badges[i];
     badges += `<img alt="" src="${badge.url}" class="badge"> `;
   }
-  
+
   let color = data.tags.color;
   if (color === "") {
     const username = data.displayName;
-    color = data.displayColor !== "" ? data.displayColor : "#" + (md5(username).substr(26));
+    color =
+      data.displayColor !== ""
+        ? data.displayColor
+        : "#" + md5(username).substr(26);
   }
-  
-  addMessage(obj.detail.event.data.displayName, 
-             message, 
-             badges, 
-             data.userId, 
-             data.msgId,
-             color,
-             data.isAction);
+
+  addMessage(
+    obj.detail.event.data.displayName,
+    message,
+    badges,
+    data.userId,
+    data.msgId,
+    color,
+    data.isAction
+  );
 });
 
 window.addEventListener("onWidgetLoad", function (obj) {
@@ -140,20 +151,32 @@ window.addEventListener("onWidgetLoad", function (obj) {
   channelName = obj.detail.channel.username;
   messageSize = fieldData.messageSize;
   borderColorUser = fieldData.msgBorderColorUser;
+  optCardColorUser = fieldData.msgOptCardColorUser;
+  cardColorUser = fieldData.msgCardColorUser;
+  userColor = fieldData.userColor;
+  autoUserColor = fieldData.autoUserColor;
+  localCarimboHora = fieldData.localCarimboHora;
   ignoredUsers = fieldData.ignoredUsers
     .toLowerCase()
     .replace(" ", "")
     .split(",");
-  fetch('https://api.streamelements.com/kappa/v2/channels/' + obj.detail.channel.id + '/').then(response => response.json()).then((profile) => {
-        provider = profile.provider;
-  });
-  
+  fetch(
+    "https://api.streamelements.com/kappa/v2/channels/" +
+      obj.detail.channel.id +
+      "/"
+  )
+    .then((response) => response.json())
+    .then((profile) => {
+      provider = profile.provider;
+    });
+
   if (fieldData.alignMessages === "display: block") {
-      addition = "prepend";
-      removeSelector = ".message-row:nth-child(n+" + (messagesLimit + 1) + ")"
+    addition = "prepend";
+    removeSelector = ".message-row:nth-child(n+" + (messagesLimit + 1) + ")";
   } else {
-      addition = "append";
-      removeSelector = ".message-row:nth-last-child(n+" + (messagesLimit + 1) + ")"
+    addition = "append";
+    removeSelector =
+      ".message-row:nth-last-child(n+" + (messagesLimit + 1) + ")";
   }
 });
 
@@ -161,30 +184,44 @@ function addMessage(username, message, badges, userId, msgId, color, isAction) {
   totalMessages += 1;
   let actionClass = "";
   if (isAction) {
-      actionClass = "action";
+    actionClass = "action";
   }
-  
+
   if (borderColorUser === "sim") {
     borderMessage = color;
   }
-  
+
+  let aUserColor = userColor;
+  if (autoUserColor === "sim") {
+    aUserColor = color;
+  }
+  console.log(aUserColor);
+
+  let cardColor = cardColorUser;
+  if (optCardColorUser === "sim") {
+    cardColor = color;
+  }
+
+  let localHora = localCarimboHora;
   let hora = "";
   if (carimboHora === "sim") {
     let d = new Date();
-    let messageSizeTime = messageSize-(messageSize/4);
+    let messageSizeTime = messageSize - messageSize / 4;
     hora = `
         <br>
-        <div class="time" style="font-size: ${messageSizeTime}px;">
-        ${('0' + d.getHours()).slice(-2)}:${('0' + d.getMinutes()).slice(-2)}:${('0' + d.getSeconds()).slice(-2)}
+        <div class="time" style="font-size:${messageSizeTime}px; text-align:${localHora};">
+        ${("0" + d.getHours()).slice(-2)}:${("0" + d.getMinutes()).slice(
+      -2
+    )}:${("0" + d.getSeconds()).slice(-2)}
         </div>
-  `
+  `;
   }
-  
+
   const element = $.parseHTML(`
   <div data-from="${userId}" data-id="${msgId}" class="message-row {animationIn} animated" id="msg-${totalMessages}">
-    <div class="meta" style="background-color: ${color};">
+    <div class="meta" style="background-color: ${cardColor};">
       <div class="badges">${badges}</div>
-      <div class="name">${username}</div>
+      <div class="name" style="color: ${aUserColor};">${username}</div>
     </div>
 
     <div class="message">
@@ -194,40 +231,48 @@ function addMessage(username, message, badges, userId, msgId, color, isAction) {
       </div>
     </div>
   </div>`);
-  
+
   if (addition === "append") {
-        if (hideAfter !== 0) {
-            $(element)
-              .appendTo('#log')
-              .delay(hideAfter * 1000)
-              .queue(function () {
-                $(this).removeClass(animationIn).addClass(animationOut).delay(1000).queue(function () {
-                    $(this).remove()
-                }).dequeue();
-            });
-        } else {
-          $(element)
-            .appendTo('#log');
-        }
+    if (hideAfter !== 0) {
+      $(element)
+        .appendTo("#log")
+        .delay(hideAfter * 1000)
+        .queue(function () {
+          $(this)
+            .removeClass(animationIn)
+            .addClass(animationOut)
+            .delay(1000)
+            .queue(function () {
+              $(this).remove();
+            })
+            .dequeue();
+        });
     } else {
-        if (hideAfter !== 0) {
-            $(element)
-              .prependTo('#log')
-              .delay(hideAfter * 1000)
-              .queue(function () {
-                $(this).removeClass(animationIn).addClass(animationOut).delay(1000).queue(function () {
-                    $(this).remove()
-                }).dequeue();
-            });
-        } else {
-          $(element)
-            .prependTo('#log');         
-        }
+      $(element).appendTo("#log");
     }
-  
+  } else {
+    if (hideAfter !== 0) {
+      $(element)
+        .prependTo("#log")
+        .delay(hideAfter * 1000)
+        .queue(function () {
+          $(this)
+            .removeClass(animationIn)
+            .addClass(animationOut)
+            .delay(1000)
+            .queue(function () {
+              $(this).remove();
+            })
+            .dequeue();
+        });
+    } else {
+      $(element).prependTo("#log");
+    }
+  }
+
   if (messagesLimit > 0 && totalMessages > messagesLimit) {
     removeRow();
-  }  
+  }
 }
 
 function attachEmotes(message) {
@@ -244,7 +289,7 @@ function attachEmotes(message) {
     let result = data.filter((emote) => {
       return emote.name === key;
     });
-    if (typeof result[0] !== "undefined") {      
+    if (typeof result[0] !== "undefined") {
       let msgSize = messageSize + 5;
       let url = result[0]["urls"][4];
       if (provider === "twitch") {
@@ -275,31 +320,37 @@ function attachEmotes(message) {
 }
 
 function html_encode(e) {
-    return e.replace(/[<>"^]/g, function (e) {
-        return "&#" + e.charCodeAt(0) + ";";
-    });
+  return e.replace(/[<>"^]/g, function (e) {
+    return "&#" + e.charCodeAt(0) + ";";
+  });
 }
 
 function removeRow() {
-    if (!$(removeSelector).length) {
-        return;
+  if (!$(removeSelector).length) {
+    return;
+  }
+  if (animationOut !== "none" || !$(removeSelector).hasClass(animationOut)) {
+    if (hideAfter !== 0) {
+      $(removeSelector).dequeue();
+    } else {
+      $(removeSelector)
+        .addClass(animationOut)
+        .delay(1000)
+        .queue(function () {
+          $(this).remove().dequeue();
+        });
     }
-    if (animationOut !== "none" || !$(removeSelector).hasClass(animationOut)) {
-        if (hideAfter !== 0) {
-            $(removeSelector).dequeue();
-        } else {
-            $(removeSelector).addClass(animationOut).delay(1000).queue(function () {
-                $(this).remove().dequeue()
-            });
+    return;
+  }
 
-        }
-        return;
+  $(removeSelector).animate(
+    {
+      height: 0,
+      opacity: 0,
+    },
+    "slow",
+    function () {
+      $(removeSelector).remove();
     }
-
-    $(removeSelector).animate({
-        height: 0,
-        opacity: 0
-    }, 'slow', function () {
-        $(removeSelector).remove();
-    });
+  );
 }
