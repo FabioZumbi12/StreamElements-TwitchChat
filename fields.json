@@ -28,7 +28,7 @@
   "msgBorderColorUser": {
     "label": "Border Color Based on User:",
     "type": "dropdown",
-    "value": "nao",
+    "value": "sim",
     "options": {
       "nao": "No",
       "sim": "Yes"
@@ -44,7 +44,7 @@
     "msgOptCardColorUser": {
         "label": "Card Color User Based?",
         "type": "dropdown",
-        "value": "nao",
+        "value": "sim",
         "options": {
             "nao": "No",
             "sim": "Yes"
