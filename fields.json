@@ -40,7 +40,23 @@
     "label": "Message Border Color:",
     "value": "#ffd539",    
     "group": "Customization"
-  },  
+  },    
+    "msgOptCardColorUser": {
+        "label": "card Color User Based?",
+        "type": "dropdown",
+        "value": "nao",
+        "options": {
+            "nao": "No",
+            "sim": "Yes"
+        },
+        "group": "Customization"
+    },
+    "msgCardColorUser": {
+        "type": "colorpicker",
+        "label": "User Card Color:",
+        "value": "#ffd539",
+        "group": "Customization"
+    },
   "msgBackgroundColor": {
     "type": "colorpicker",
     "label": "Message Background Color:",
@@ -62,7 +78,19 @@
       "sim": "Yes"
     },
     "group": "Customization"
-  },
+  },   
+    "localCarimboHora": {
+        "label": "Time Location:",
+        "type": "dropdown",
+        "value": "left",
+        "options": {
+            "left": "Left",
+            "center": "Center",
+            "right": "Roght",
+          "justify": "Justify"
+        },
+        "group": "Customization"
+    },
   "font": {
     "type": "googleFont",
     "label": "Font:",
@@ -74,7 +102,17 @@
     "label": "Message Color:",
     "value": "#fff",
     "group": "Font"
-  },  
+  },    
+    "autoUserColor": {
+        "label": "Auto User Color?",
+        "type": "dropdown",
+        "value": "nao",
+        "options": {
+            "nao": "No",
+            "sim": "Yes"
+        },
+        "group": "Font"
+    },
   "userColor": {
     "type": "colorpicker",
     "label": "User Color:",
