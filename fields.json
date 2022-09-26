@@ -42,7 +42,7 @@
     "group": "Customization"
   },    
     "msgOptCardColorUser": {
-        "label": "card Color User Based?",
+        "label": "Card Color User Based?",
         "type": "dropdown",
         "value": "nao",
         "options": {
