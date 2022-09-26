@@ -104,7 +104,7 @@
     "group": "Font"
   },    
     "autoUserColor": {
-        "label": "Auto User Color?",
+        "label": "Auto User Name Color?",
         "type": "dropdown",
         "value": "nao",
         "options": {
