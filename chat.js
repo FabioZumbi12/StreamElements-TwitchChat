@@ -124,7 +124,7 @@ window.addEventListener("onEventReceived", function (obj) {
     color =
       data.displayColor !== ""
         ? data.displayColor
-        : "#" + md5(username).substr(26);
+        : "#" + md5(username).slice(26);
   }
 
   addMessage(
