@@ -319,10 +319,10 @@ function attachEmotes(message) {
   });
 }
 
-function html_encode(e) {
-  return e.replace(/[<>"^]/g, function (e) {
-    return "&#" + e.charCodeAt(0) + ";";
-  });
+function html_encode(str) {
+  const el = document.createElement('textarea');
+  el.innerHTML = str;
+  return el.value;
 }
 
 function removeRow() {
