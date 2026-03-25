@@ -119,12 +119,16 @@ window.addEventListener("onEventReceived", function (obj) {
   }
 
   let color = data.tags.color;
-  if (color === "") {
+  if (!color) {
     const username = data.displayName;
     color =
       data.displayColor !== ""
         ? data.displayColor
         : "#" + md5(username).slice(26);
+
+    if (!color) {
+      color = "#fff";
+    }
   }
 
   addMessage(
